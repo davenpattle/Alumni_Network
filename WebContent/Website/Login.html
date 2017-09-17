@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<!-- Main Purpose of this page is to redirect user to actual website defined in internal folder -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login</title>
+
+    <link href="../Resources/css/bootstrap.css" rel="stylesheet">
+    <link href="../Resources/css/header.css" rel="stylesheet">
+    <link href="../Resources/css/login.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="container-fluid">
+
+<section id="header">
+    <div class="row">
+        <h1>Alumni Network</h1>
+    </div>
+</section>
+
+<section id="options" style="visibility: hidden;">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-primary btn2" id="viewprofilebtn">View Profile</button>
+        <button type="button" class="btn btn-primary btn2" id="editprofilebtn">Edit Profile</button>
+        <button type="button" class="btn btn-primary btn2" id="editloginbtn">Edit Password</button>
+        <button type="button" class="btn btn-primary btn2" id="viewgroupbtn">View Groups</button>
+        <button type="button" class="btn btn-primary btn2" id="addgroupbtn">Add Groups</button>
+        <button type="button" class="btn btn-primary btn2" id="editgroupbtn">Edit Groups</button>
+        <button type="button" class="btn btn-primary btn2" id="getalumnibtn">Get Alumni</button>
+        <button type="button" class="btn btn-primary btn2" id="getjobsbtn">Get Jobs</button>
+    </div>
+</section>
+
+
+
+<section id="userdetail">
+    <div class="row" id="userlogin">
+        <form>
+            <fieldset>
+                <legend>Please Enter Your Details</legend>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">User Name:</div>
+                    <div class="col-sm-7 inpt"><input type="text" id="username" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">Password:</div>
+                    <div class="col-sm-7 inpt"><input type="password" id="password1" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <button type="button" class="btn btn-primary center-block btn1" id="submitlogin">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row" id="userprofile" style="display: none;">
+        <div class="row form_elmnt">
+            <div id="welcomemsg"></div>
+        </div>
+        <div class="row form_elmnt">
+            <div class="col-sm-6 lbl">First Name:</div>
+            <div class="col-sm-6 val" id="fname"></div>
+        </div>
+        <div class="row form_elmnt">
+            <div class="col-sm-6 lbl">Last Name:</div>
+            <div class="col-sm-6 val" id="lname"></div>
+        </div>
+        <div class="row form_elmnt">
+            <div class="col-sm-6 lbl">Email:</div>
+            <div class="col-sm-6 val" id="email"></div>
+        </div>
+        <div class="row form_elmnt">
+            <div class="col-sm-6 lbl">Location:</div>
+            <div class="col-sm-6 val" id="location"></div>
+        </div>
+        <div class="row form_elmnt">
+            <div class="col-sm-6 lbl">Contact:</div>
+            <div class="col-sm-6 val" id="contact"></div>
+        </div>
+    </div>
+    <div class="row" id="editprofile" style="display: none;">
+        <form>
+            <fieldset>
+                <legend>Please Enter Your Details</legend>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">First Name:</div>
+                    <div class="col-sm-7 inpt"><input type="text" id="editfname" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">Last Name:</div>
+                    <div class="col-sm-7 inpt"><input type="text" id="editlname" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">Email:</div>
+                    <div class="col-sm-7 inpt"><input type="email" id="editemail" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">Location:</div>
+                    <div class="col-sm-7 inpt"><input type="text" id="editlocation" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">Contact:</div>
+                    <div class="col-sm-7 inpt"><input type="text" id="editcontact" required="required" maxlength="10"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <button type="button" class="btn btn-primary center-block btn1" id="editprofilesubmit">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row" id="editlogin" style="display: none;">
+        <form>
+            <fieldset>
+                <legend>Please Enter Your Details</legend>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">User Name:</div>
+                    <div class="col-sm-7 val" id="editlogin_user_name"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <div class="col-sm-5 lbl">Password:</div>
+                    <div class="col-sm-7 inpt"><input type="password" id="editpassword" required="required"></div>
+                </div>
+                <div class="row form_elmnt">
+                    <button type="button" class="btn btn-primary center-block btn1" id="editloginsubmit">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="row" id="viewgroup" style="display: none;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row grouphead">Company List</div>
+                <div class="row" id="companylist"></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row grouphead">Institute List</div>
+                <div class="row" id="institutelist"></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row grouphead">Expertise List</div>
+                <div class="row" id="expertiselist"></div>
+            </div>
+            </div>
+    </div>
+    <div class="row" id="addgroup" style="display: none;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row grouphead">Company List</div>
+                <div class="row" id="addcompanylist">
+                    <form>
+                        <fieldset>
+                            <legend class="addgrouplegend">Please Enter Your Details</legend>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Company:</div>
+                                <div class="col-sm-7">
+                                    <div class="row inpt">
+                                        <input type="text" list="companyoption" id="addcompany" required="required">
+                                        <datalist id="companyoption">
+                                            </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Position:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="addposition" required="required"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Start Date:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="caddsdate" required="required" placeholder="MMM d, yyyy"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">End Date:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="caddedate" required="required" placeholder="MMM d, yyyy"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <button type="button" class="btn btn-primary center-block btn3" id="addcompanysubmit">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row grouphead">Institute List</div>
+                <div class="row" id="addinstitutelist">
+                    <form>
+                        <fieldset>
+                            <legend class="addgrouplegend">Please Enter Your Details</legend>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Institute:</div>
+                                <div class="col-sm-7">
+                                    <div class="row inpt">
+                                        <input type="text" list="instituteoption" id="addinstitute" required="required">
+                                        <datalist id="instituteoption">
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Degree:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="adddegree" required="required"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Start Date:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="iaddsdate" required="required" placeholder="MMM d, yyyy"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">End Date:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="iaddedate" required="required" placeholder="MMM d, yyyy"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <button type="button" class="btn btn-primary center-block btn3" id="addinstitutesubmit">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row grouphead">Expertise List</div>
+                <div class="row" id="addexpertiselist">
+                    <form>
+                        <fieldset>
+                            <legend class="addgrouplegend">Please Enter Your Details</legend>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Expertise:</div>
+                                <div class="col-sm-7">
+                                    <div class="row inpt">
+                                        <input type="text" list="expertiseoption" id="addexpertise" required="required">
+                                        <datalist id="expertiseoption">
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <div class="col-sm-5 lbl">Level:</div>
+                                <div class="col-sm-7 inpt"><input type="text" id="addlevel" required="required"></div>
+                            </div>
+                            <div class="row form_elmnt">
+                                <button type="button" class="btn btn-primary center-block btn3" id="addexpertisesubmit">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="editgroup" style="display: none;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row grouphead">Company List</div>
+                <div class="row" id="editcompanylist"></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row grouphead">Institute List</div>
+                <div class="row" id="editinstitutelist"></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row grouphead">Expertise List</div>
+                <div class="row" id="editexpertiselist"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="getalumni" style="display: none;">
+        <div class="row" id="getalumnilist"></div>
+    </div>
+    <div class="row" id="getjobs" style="display: none;">
+        <div class="row" id="jobform">
+            <form>
+                <fieldset>
+                    <legend>Please Enter Your Choices</legend>
+                    <div class="row form_elmnt">
+                        <div class="col-sm-5 lbl">Company:</div>
+                        <div class="col-sm-7">
+                            <div class="row inpt">
+                                <input type="text" list="jobcompanyoption" id="addjobcompany">
+                                <datalist id="jobcompanyoption">
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form_elmnt">
+                        <div class="col-sm-5 lbl">Min-Exp(months):</div>
+                        <div class="col-sm-7 inpt"><input type="text" id="jobexp"></div>
+                    </div>
+                    <div class="row form_elmnt">
+                        <button type="button" class="btn btn-primary center-block btn2" id="getjobssubmit">Retrieve</button>
+                    </div>
+                </fieldset>
+            </form>
+            </div>
+        <div class="row" id="getjobslist"></div>
+    </div>
+    </section>
+
+
+
+<section id="padding">
+    </section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../Resources/js/bootstrap.js"></script>
+<script src="../Resources/js/login.js"></script>
+</body>
+</html>

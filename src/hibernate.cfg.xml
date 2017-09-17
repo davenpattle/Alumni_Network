@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/alumninetwork</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">mohneesh</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="transaction.coordinator_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="current_session_context_class">thread</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="hibernate.connection.autocommit ">false</property>
+		
+		<!-- Hibernate Search Properties -->
+		<property name="hibernate.search.default.directory_provider">filesystem</property>
+		<property name="hibernate.search.default.indexBase">/home/davenpattle/Documents/5thsem/DBMS/index</property>
+		<property name="hibernate.connection.autocommit ">false</property>
+		
+		<mapping class="DatabaseSchema.CompanyList"></mapping>
+		<mapping class="DatabaseSchema.InstituteList"></mapping>
+		<mapping class="DatabaseSchema.ExpertiseList"></mapping>
+		<mapping class="DatabaseSchema.UserProfile"></mapping>
+		<mapping class="DatabaseSchema.UserCompanyList"></mapping>
+		<mapping class="DatabaseSchema.UserInstituteList"></mapping>
+		<mapping class="DatabaseSchema.UserExpertiseList"></mapping>
+		<mapping class="DatabaseSchema.JobList"></mapping>
+		<mapping class="DatabaseSchema.JobCategoryList"></mapping>
+		<mapping class="DatabaseSchema.JobApplicantList"></mapping>
+		<mapping class="DatabaseSchema.UserAuthenticationList"></mapping>
+		
+    </session-factory>
+
+	
+</hibernate-configuration>

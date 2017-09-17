@@ -1,0 +1,73 @@
+.lbl{
+    text-align: right;
+    font-size: 1.5em;
+}
+
+.row{
+    padding: 0 0 0 1%;
+}
+
+.val{
+    text-align: left;
+    font-size: 1.5em;
+}
+
+#welcomemsg{
+    text-align: center;
+    font-size: 3em;
+}
+
+legend{
+    text-align: center;
+    font-size: 3em;
+}
+
+.inpt input{
+    width: 50%;
+}
+
+.form_elmnt{
+    padding: 1%;
+}
+
+.btn1{
+    width: 90%;
+    font-size: 2em;
+}
+
+#options{
+    position: fixed;
+    bottom: 5px;
+    clear: both;
+    z-index: 10;
+}
+
+.btn2{
+    font-size: 1.5em;
+}
+
+.btn3{
+    font-size: 1em;
+}
+
+ol{
+    font-size: 1.25em;
+}
+
+ol li{
+    padding: 2%;
+}
+
+.grouphead{
+    font-size: 2em;
+    padding: 2%;
+}
+
+.addgrouplegend{
+    font-size: 1.5em;
+}
+
+#padding{
+    display: block;
+    height: 100px;
+}

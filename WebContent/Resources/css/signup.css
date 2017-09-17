@@ -1,0 +1,22 @@
+.lbl{
+    text-align: right;
+    font-size: 1.5em;
+}
+
+legend{
+    text-align: center;
+    font-size: 3em;
+}
+
+.inpt input{
+    width: 50%;
+}
+
+.form_elmnt{
+    padding: 1%;
+}
+
+.btn{
+    width: 50%;
+    font-size: 2em;
+}
